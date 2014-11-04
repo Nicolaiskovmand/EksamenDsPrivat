@@ -17,7 +17,7 @@ public class Configurations {
     private String password;
 
     // FFkey is used in Encryption.java
-    private String ffcryptkey;
+    private String ffcryptkey = "17" ;
 
     // Weather variables
     private String weather_expiration_time;
@@ -26,7 +26,7 @@ public class Configurations {
     private String weather_future_in_days;
 
     // Opret DB name
-    // Opret update time på QOTD
+    // Opret update time p�� QOTD
 
 
     public String getHost() {

@@ -10,19 +10,34 @@ public class TCPClient {
 	public static void main(String[] args) throws Exception {
 		String modifiedSentence;
 		Gson gson = new GsonBuilder().create();
-		CreateCalender CC = new CreateCalender();
-		CC.setCalenderName("Din mors kalender2");
-		CC.setPublicOrPrivate(1);
-		CC.setUserName("John");
-		String gsonString = gson.toJson(CC);
-		System.out.println(CC);
-		System.out.println(gsonString);
+		// DETTE ER TIL AT TESTE BRUGER
+		/*AuthUser user = new AuthUser();
+		user.setAuthUserEmail("nsn@msn.dk");
+		user.setAuthUserPassword("1234");
+		user.setAuthUserIsAdmin(false);
+		
+		String gsonString = gson.toJson(user);
+		System.out.println(user);
+		System.out.println(gsonString);*/
+		
+		//DETTE ER TIL AT TESTE CALENDER
+		CreateCalender Cal = new CreateCalender();
+		Cal.setCalenderName("CBS");
+		Cal.setUserName("NSN@msn.dk");
+		Cal.setPublicOrPrivate(0);
+		
+		String CalJson = gson.toJson(Cal);
+		
+		System.out.println(CalJson);
+		
+				
+		
 
-		Socket clientSocket = new Socket("localhost", 8888);
+		Socket clientSocket = new Socket("172.17.189.104", 8888);
 		DataOutputStream outToServer = new DataOutputStream(
 				clientSocket.getOutputStream());
-		byte[] input = gsonString.getBytes();
-		byte key = (byte) 3.1470;
+		byte[] input = CalJson.getBytes();
+		byte key = (byte) 17;
 		byte[] encrypted = input;
 		for (int i = 0; i < encrypted.length; i++)
 			encrypted[i] = (byte) (encrypted[i] ^ key);
