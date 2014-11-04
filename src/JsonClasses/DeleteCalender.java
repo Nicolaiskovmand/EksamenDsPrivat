@@ -7,7 +7,7 @@ public class DeleteCalender implements java.io.Serializable
 	private String calenderName;
 	private String userName;
 	
-	//Getters and setters for everything, bitch
+	//Getters and setters for everything
 	public String getOverallID() {
 		return overallID;
 	}

@@ -52,8 +52,8 @@ public class EncryptUserID {
 
     }
 
-	public String getKey() {
-		return key;
+	public String getKey(String userid) {
+		return crypt(userid + HASHKEY);
 	}
     
 }
