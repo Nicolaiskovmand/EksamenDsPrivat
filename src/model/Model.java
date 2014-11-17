@@ -13,6 +13,9 @@ public abstract class Model {
 
     private static Configurations cf = new Configurations();
 
+    
+    
+    
     private static String sqlUrl = "jdbc:mysql://" + cf.getHost() + ":" + cf.getPort() + "/";
     private static String sqlUser = cf.getUsername();
     private static String sqlPasswd = cf.getPassword();
